@@ -1,3 +1,4 @@
+navigation = document.getElementById('navigation')
 
 
 window.addEventListener('scroll', onScroll);
@@ -11,6 +12,16 @@ function onScroll(){
   activateMenuAtCurrerntSection(contact);
 
 }
+
+$('nav a').click(function(e){
+    e.preventDefault()
+    var id = $(this).attr('href'),
+        targetOffset = $(id).offset().top
+    $('html, body').animate({
+        scrollTop: targetOffset
+    }, 500)
+})
+
 
 function activateMenuAtCurrerntSection(section){
   const targetLine = scrollY + innerHeight / 2;
@@ -42,8 +53,6 @@ function activateMenuAtCurrerntSection(section){
 }
 
 function showNavOnScroll(){
-    navigation = document.getElementById('navigation')
-    console.log(navigation)
   if(scrollY > 0){
     navigation.classList.add('scroll')
   }else{
@@ -68,21 +77,3 @@ function closeMenu(){
   document.body.classList.remove('menu-expanded')
 }
 
-ScrollReveal({
-  origin: 'left',
-  distance: '30px',
-  duration: 600,
-}).reveal(`
-#home, 
-#home .col-a,
-#home img, 
-#home .stats, 
-#services,
-#services header,
-#services .card,
-#about,
-#about header,
-#about p,
-#about img
-`
-);
