@@ -1,3 +1,5 @@
+
+
 window.addEventListener('scroll', onScroll);
 onScroll()
 function onScroll(){
@@ -12,6 +14,7 @@ function onScroll(){
 
 function activateMenuAtCurrerntSection(section){
   const targetLine = scrollY + innerHeight / 2;
+  
 
   //verifica se a sessão passou da linha
 
@@ -25,11 +28,9 @@ function activateMenuAtCurrerntSection(section){
   const sectionEndsAt = sectionTop + sectionHeight;
   const sectionEndPassedTargetline = sectionEndsAt <= targetLine;
 
-  const sectionBoundaries = sectionTopReachOrPassedTargetline &&
-  !sectionEndPassedTargetline;
+  const sectionBoundaries = sectionTopReachOrPassedTargetline && !sectionEndPassedTargetline;
 
-  const menuElement = document
-  .querySelector(`.menu a[href*=${section.getAttribute('id')}]`)
+  const menuElement = document.querySelector(`.menu a[href*=${section.getAttribute('id')}]`)
 
   menuElement.classList.remove('active');
   if(sectionBoundaries){
@@ -41,6 +42,8 @@ function activateMenuAtCurrerntSection(section){
 }
 
 function showNavOnScroll(){
+    navigation = document.getElementById('navigation')
+    console.log(navigation)
   if(scrollY > 0){
     navigation.classList.add('scroll')
   }else{
@@ -49,6 +52,7 @@ function showNavOnScroll(){
 }
 
 function showBackToTopButton(){
+    backToTopButton = document.getElementById('backToTopButton')
   if(scrollY > 1400){
     backToTopButton.classList.add('show')
   }else{

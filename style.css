@@ -121,7 +121,7 @@ section .content p{
   justify-content: center;
   gap: 1.6rem;
 
-  transition: background 400ms;
+  transition: all 400ms;
 
 }
 
