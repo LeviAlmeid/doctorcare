@@ -6,7 +6,7 @@
 
 :root {
 
-  --hue: 30;
+  --hue: 195;
 
   --prymary-color: hsl(var(--hue), 100%, 32%);
   --headline: hsl(15, 11%, 15%);
@@ -55,6 +55,10 @@ img{
   margin-right: auto;
   margin-left: auto;
   padding-inline: 2.4rem;
+}
+
+.btn-initial{
+  margin-bottom: 1rem;
 }
 
 section {
